@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GTM consent Page</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-655615795"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-655615795');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://gtm-ctfe-preprod.corp.google.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WT45HGZ');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://gtm-ctfe-preprod.corp.google.com/ns.html?id=GTM-WT45HGZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->  
+    <h1>My Test Page</h1>
+    
+    <button class="button" id="deny_consent_button">Deny consent</button>
+    <button class="button" id="grant_consent_button">Grant consent</button>
+    <button class="button" onclick="sendAdsPurchaseEvent()">Purchase Event</button>
+    <a href="#">A link</a>
+    <div style="height: 300px; width: 100%; overflow: auto">
+      <div style="height: 400%; width: 100%">
+
+      </div>
+    </div>
+  </body>
+</html>
