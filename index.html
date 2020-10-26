@@ -22,6 +22,14 @@
       function sendAdsPurchaseEvent() {
         gtag('event', 'purchase', {'send_to': 'AW-655615795/0S25CJer3MsBELPOz7gC'});
       }      
+      function pushHistoryState() {
+        const state = { 'page_id': 1, 'user_id': 5 };
+        const title = 'New state title';
+        const url = 'https://zhankevich.github.io/?gtm_debug=x';
+
+        history.pushState(state, title, url);
+      }      
+      
     </script>
   </head>
   <body>
@@ -34,7 +42,9 @@
     <button class="button" id="deny_consent_button">Deny consent</button>
     <button class="button" id="grant_consent_button">Grant consent</button>
     <button class="button" onclick="sendAdsPurchaseEvent()">Purchase Event</button>
-    <a href="/not-debugged-container.html">Go to non-debiggable container page</a>
+    <button class="button" onclick="pushHistoryState()">History change event</button>
+    <a href="/#newState=2">Hash change</a>
+    <a href="/not-debugged-container.html">Go to non-debuggable container page</a>
     <div style="height: 300px; width: 100%; overflow: auto">
       <div style="height: 400%; width: 100%">
 
