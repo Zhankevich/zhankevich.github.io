@@ -17,7 +17,9 @@
         const url = '/'+name;
 
         history.pushState(state, title, url);
-      }      
+      }
+      // Push some state immidiatly.
+      pushHistoryState('procurement/transfer-method');
       
       function changeHash() {
         location.hash= '#lol=pop';
