@@ -11,10 +11,10 @@
     <!-- End Google Tag Manager -->
     
     <script>
-      function pushHistoryState() {
-        const state = { 'page_id': 1, 'user_id': 5 };
-        const title = 'New state title';
-        const url = 'https://zhankevich.github.io/?gtm_debug=x';
+      function pushHistoryState(name) {
+        const state = { 'page_id': name};
+        const title = 'New state: ' + name;
+        const url = '/'+name;
 
         history.pushState(state, title, url);
       }      
@@ -32,7 +32,8 @@
     <h1>Carvana test</h1>
     
     <a href="/index.html">Go to home pge</a>
-    <button class="button" onclick="pushHistoryState()">History change event</button>
+    <button class="button" onclick="pushHistoryState('trade-in')">History change event 'trade-in'</button>
+    <button class="button" onclick="pushHistoryState('payment-options')">History change event 'trade-in'</button>
     <button class="button" onclick="changeHash()">Change hash</button>
     <a href="/?new=param">Hash change</a>
     <div style="height: 300px; width: 100%; overflow: auto">
