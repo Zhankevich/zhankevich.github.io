@@ -13,13 +13,23 @@
     gtag('config', 'AW-419513907');
   </script>
   
+  <!-- Event snippet for Purchase conversion page -->
+  <script>
+  	function sendConversion() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-419513907',
+        'transaction_id': ''
+    	});
+    }
+  </script>
   </head>
   <body>
     <h1>Preprod OGT AW-419513907 test for User data </h1>
     
     <form action="/" id="foo" method="GET">
-    input: <input type="email" name="input"><br>
+    input: <input type="email" id="email" name="email"><br>
     <input type="submit" value="Submit">
+    <button onClick="sendConversion()">Send converstion to AW-419513907</button>
   </form>
   </body>
 </html>
