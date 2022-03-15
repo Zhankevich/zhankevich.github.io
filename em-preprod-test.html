@@ -38,20 +38,6 @@
     }
 
   </script>
-  <script>
-    document.getElementById("sendConversion").addEventListener("click", function () {
-      gtag("event", "nowar", {
-        currency: "USD",
-        value: 7.77
-      });
-    });
-    
-    document.getElementById("sendBlockedEvent").addEventListener("click", function () {
-      gtag("event", "badevent", {
-        war: "blood"
-      });
-    });    
-  </script>  
     
   <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>    
 
@@ -101,4 +87,19 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Z578PYE51qM?enablejsapi=1"
             id="embeddedVideo" frameborder="0" allowfullscreen></iframe>    
   </body>
+  
+  <script>
+    document.getElementById("sendConversion").addEventListener("click", function () {
+      gtag("event", "nowar", {
+        currency: "USD",
+        value: 7.77
+      });
+    });
+    
+    document.getElementById("sendBlockedEvent").addEventListener("click", function () {
+      gtag("event", "badevent", {
+        war: "blood"
+      });
+    });    
+  </script>    
 </html>
