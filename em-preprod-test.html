@@ -3,13 +3,17 @@
   <head>
     <title>My Test Page</title>
   <!-- Global site tag (gtag.js) - GA -->
-  <script async src="https://gtm-ctfe-preprod.corp.google.com/gtag/js?id=G-WB74P1F6QQ"></script>
+  // <script async src="https://gtm-ctfe-preprod.corp.google.com/gtag/js?id=G-WB74P1F6QQ"></script>
+  // To test blocked events G-Q1H6X1HZ04
+  <script async src="https://gtm-ctfe-preprod.corp.google.com/gtag/js?id=G-Q1H6X1HZ04"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-WB74P1F6QQ');
+    // gtag('config', 'G-WB74P1F6QQ');
+    // To test blocked events G-Q1H6X1HZ04
+    gtag('config', 'G-Q1H6X1HZ04');
   </script>
   
   <script>
@@ -64,7 +68,7 @@
     <button id="sendConversion">Send "nowar" conversion event</button>\
     
     <p>Block events</p>    
-    <button id="sendBlockedEvent">Send "badevent" event</button>
+    <button id="sendBlockedEvent">Send "_au" event (only for works if G-Q1H6X1HZ04 is uncommented)</button>
     
     <p>Form</p>
     <form id="form-1" name="form-1-name" action="form-1">
@@ -97,8 +101,8 @@
     });
     
     document.getElementById("sendBlockedEvent").addEventListener("click", function () {
-      gtag("event", "badevent", {
-        war: "blood"
+      gtag("event", "_au", {
+        param: "blocked"
       });
     });    
   </script>    
