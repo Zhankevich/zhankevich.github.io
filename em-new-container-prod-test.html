@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Page</title>
+  <!-- Global site tag (gtag.js) - GA --> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WB74P1F6QQ"></script>
+  
+<!--   // To test blocked events G-Q1H6X1HZ04 -->
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1H6X1HZ04"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WB74P1F6QQ');
+    
+    
+//     To test blocked events G-Q1H6X1HZ04
+//     gtag('config', 'G-Q1H6X1HZ04');
+  </script>
+  
+  <script>
+    // Push state invoking functions.
+    let pushedStates = 0;
+    function pushStates(num) {
+      for (let i = 0; i < num; i++) {
+        history.pushState(null, null, `/push/${pushedStates}`);
+        pushedStates++
+      }
+    }
+    function pushSame() {
+      history.pushState(null, null, `/push/${pushedStates - 1}`);
+    }
+
+    // Replace state invoking functions.
+    let replacedStates = 0;
+    function replaceStates(num) {
+      for (let i = 0; i < num; i++) {
+        history.replaceState(null, null, `/replace/${replacedStates}`);
+        replacedStates++
+      }
+    }
+    function replaceSame() {
+      history.replaceState(null, null, `/replace/${replacedStates - 1}`);
+    }
+
+  </script>
+    
+<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>    
+
+  </head>
+  <body>
+    <h1>Prod GA EM Test Page</h1>    
+    <p>Site search</p>
+    <a href="/em-prod-test.html?q=buyphone&size=64gb">Site search link</a>
+
+    <p>Outbound click</p>
+    <a href="//google.com">Outbound link</a>
+    <a href="//youtube.com">Ignored Outbound link</a>
+    
+    <p>File Download</p>
+    <a id="pdf" href="http://www.doesnotexistdomain.org/file1.pdf">pdf download</a>
+    
+    <p>History change</p>
+    <!-- Clickable anchors that change the hash. -->
+    <a href="#hash" id="hash">one</a><br>
+    <!-- Button for pushing entries to the history state -->
+    <button id="push-one" onclick="pushStates(1)">Push One State</button>
+    
+    <p>Conversion</p>    
+    <button id="sendConversion">Send "nowar" conversion event</button>\
+    
+    <p>Block events</p>    
+    <button id="sendBlockedEvent">Send "_au" event (only for works if G-Q1H6X1HZ04 is uncommented)</button>
+    
+    <p>Form</p>
+    <form id="form-1" name="form-1-name" action="form-1">
+      <input type="radio" name="color" id="form-1-color-choice-1" value="red" checked>
+      <input type="radio" name="color" id="form-1-color-choice-2" value="blue">
+      <input type="checkbox" name="scales" id="form-1-checkbox">
+      <button type="submit" id="form-1-submit" name="submit-button-name">
+        Save
+      </button>
+    </form>
+    
+    <p>Scroll</p>
+    <div style="height: 300px; width: 100%; overflow: auto">
+      <div style="height: 400%; width: 100%">
+
+      </div>
+    </div>
+    
+    <p>Video</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z578PYE51qM?enablejsapi=1"
+            id="embeddedVideo" frameborder="0" allowfullscreen></iframe>
+  </body>
+  
+  <script>
+    document.getElementById("sendConversion").addEventListener("click", function () {
+      gtag("event", "nowar", {
+        currency: "USD",
+        value: 7.77
+      });
+    });
+    
+    document.getElementById("sendBlockedEvent").addEventListener("click", function () {
+      gtag("event", "_au", {
+        param: "blocked"
+      });
+    });    
+  </script>    
+</html>
