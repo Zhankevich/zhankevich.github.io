@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Page</title>
+  <!-- Global site tag (gtag.js) - Google Ads -->
+  <script async src="https://gtm-ctfe-preprod.corp.google.com/gtag/js?id=DC-593608426"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'DC-593608426');
+  </script>
+  
+  <!-- Event snippet for Purchase conversion page -->
+  <script>
+  	function sendConversion() {
+        gtag('event', 'conversion', {
+          'allow_custom_scripts': true,
+          'send_to': 'DC-1234567/group/activity+standard',
+          'user_data': {
+            'email': 'email@lol.com',
+            'phone_number': '949123123',
+            'address': {
+              'first_name': 'First',
+              'last_name': 'Last',
+              'street': '213 Lol',
+              'city': 'City',
+              'region': 'Region',
+              'postal_code': '82123',
+              'country': 'US'
+            }
+          }
+        });
+    }
+    
+    function sendFormSubmit() {
+      gtag('event','form_submit', {form_id: 'email'});
+    }
+    
+  </script>
+  </head>
+  <body>
+    <h1>Preprod OGT DC-593608426 test with in page encoded User data </h1>
+    <button type="button" onClick="sendConversion()">Send converstion with user data to DC-593608426</button>    
+  </form>
+  </body>
+</html>
