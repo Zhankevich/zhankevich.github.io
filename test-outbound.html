@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Page</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZZP7PHCNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-5ZZP7PHCNR');
+  </script>
+  <script>
+    // Push state invoking functions.
+    let pushedStates = 0;
+    function pushStates(num) {
+      for (let i = 0; i < num; i++) {
+        history.pushState(null, null, `/push/${pushedStates}`);
+        pushedStates++
+      }
+    }
+    function pushSame() {
+      history.pushState(null, null, `/push/${pushedStates - 1}`);
+    }
+
+    // Replace state invoking functions.
+    let replacedStates = 0;
+    function replaceStates(num) {
+      for (let i = 0; i < num; i++) {
+        history.replaceState(null, null, `/replace/${replacedStates}`);
+        replacedStates++
+      }
+    }
+    function replaceSame() {
+      history.replaceState(null, null, `/replace/${replacedStates - 1}`);
+    }
+
+  </script>
+    
+  <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>    
+
+  </head>
+  <body>
+    <h1>Prod GA EM Test Page</h1>    
+    <p>Site search</p>
+    <a href="/em-prod-test.html?q=buyphone&size=64gb">Site search link</a>
+
+    <p>Outbound click</p>
+    <a href="//google.com">Outbound link</a>
+    <a href="//youtube.com">Ignored Outbound link</a>
+    
+    <p>File Download</p>
+    <a id="pdf" href="http://www.doesnotexistdomain.org/file1.pdf">pdf download</a>
+    
+    <p>History change</p>
+    <!-- Clickable anchors that change the hash. -->
+    <a href="#hash" id="hash">one</a><br>
+    <!-- Button for pushing entries to the history state -->
+    <button id="push-one" onclick="pushStates(1)">Push One State</button>
+    
+  </body>
+  
+  <script>
+    document.getElementById("sendConversion").addEventListener("click", function () {
+      gtag("event", "nowar", {
+        currency: "USD",
+        value: 7.77
+      });
+    });
+    
+    document.getElementById("sendBlockedEvent").addEventListener("click", function () {
+      gtag("event", "_au", {
+        param: "blocked"
+      });
+    });    
+  </script>    
+</html>
