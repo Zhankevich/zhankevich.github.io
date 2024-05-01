@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Page for EC</title>
+
+  </head>
+  <body>
+    <h1>Prod EC Test Page</h1>    
+
+    <p>Conversion</p>    
+    <button id="sendConversion">Do something</button>
+
+    <form action="/ec-migration.html" id="foo" method="GET">
+      input1: <input type="email" id="email" name="email"><br>
+      input2: <input type="email" id="email2" name="email2"><br>
+      <input id="next-page" type="submit" value="Submit">
+    </form>
+
+  </body>
+  
+  <script>
+    window.emailVariable1 = 'mytestemail@lolol.corn';
+    window.emailVariable2 = 'mytestemail2@lolol.corn';
+    document.getElementById("sendConversion").addEventListener("click", function () {
+      
+    });    
+  </script>    
+</html>
