@@ -16,7 +16,8 @@
     <h1>Prod EC Test Page</h1>    
 
     <p>Conversion</p>    
-    <button id="sendConversion">Do something</button>
+    <button id="sendConversion">Do something</button><br>
+    <button id="sendConversion2">Do something 2</button>
 
     <form action="/ec-migration.html" id="foo" method="GET">
       email: <input type="email" id="email" name="email"><br>
@@ -45,6 +46,25 @@
     }
     document.getElementById("sendConversion").addEventListener("click", function () {
       return gtag_report_conversion();
-    });    
+    });
+
+    function gtag_report_conversion2(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16548767634/06-1CI_L16sZEJLPiNM9',
+          'value': 8.0,
+          'currency': 'TWD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    document.getElementById("sendConversion2").addEventListener("click", function () {
+      return gtag_report_conversion2();
+    });
+    
   </script>    
 </html>
