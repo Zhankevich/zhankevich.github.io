@@ -16,6 +16,20 @@
   </head>
   <body>
     <h1>FL Manual user data Test Page</h1>
-    <div id="manualEmail">very@cool.email</div>    
+    <div id="manualEmail">very@cool.email</div> 
+    <br>
+    <button id="sendConversion">Do something</button>
+    <br>
   </body>
+  <script>    
+    document.getElementById("sendConversion").addEventListener("click", function () {
+      gtag('event', 'purchase', {
+        'allow_custom_scripts': true,
+        'value': 213,
+        'transaction_id': 5555,
+        'send_to': 'DC-13214739/test/ectes0+transactions',
+      });
+      return false;
+    });
+  </script>
 </html>
