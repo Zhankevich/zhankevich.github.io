@@ -124,7 +124,11 @@
   
   <script>
     document.getElementById("sendConversion").addEventListener("click", function () {
-      gtag('event', 'conversion', {send_to: 'AW-4005/QWERTYU'});
+        gtag('event', 'conversion', {
+          'send_to': 'AW-4005/9TaICKCKmrMaEJLPiNM9',
+          'value': 1.0,
+          'currency': 'TWD'
+      });
     });
     
     document.getElementById("sendBlockedEvent").addEventListener("click", function () {
